@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class = "row text-center">
+        <div class = "col-sm-12">
+            <img src="https://cdn3.iconfinder.com/data/icons/simplius-pack/512/pencil_and_paper-512.png" class="img-rounded" alt="TT" width="304" height="236">
+        </div>
+    </div>
+    <div class = "row text-center">
+        <div class = "col-sm-12">
+            <h1> Editing {{i.name}} Student Profile</h1>
+        </div>
+    </div>
+    <div class = "row text-center">
+        <div class = "col-sm-12">
+            <form method="POST" class = "form-vertical" action = "{{url_for('editTutorStudent' , tutor_id = tutor_id , student_id = i.id)}}">
+                <div class ="form-group">
+                    <label>New Student Name:</label>
+                    <input type="text" class = "form-control scol-sm-2" name="name" placeholder = "{{i.name}} ">
+                </div>
+                <div class ="form-group">
+                    <label>Gender</label>
+                    <input type="text" name="gender"  class = "form-control" placeholder = "{{i.gender}}">
+                </div>
+                <div class = "form-group">
+                        <input type="submit" class="btn btn-success" value = "Submit">
+                </div>
+            </form>
+        </div>
+
+
+{% endblock %}

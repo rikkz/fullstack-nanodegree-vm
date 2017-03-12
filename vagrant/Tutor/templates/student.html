@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class = "row text-center">
+        <div class = "col-sm-12">
+            <img src="https://cdn0.iconfinder.com/data/icons/business-collection-2/128/user_man-512.png" class="img-circle" alt="Cinque Terre" width="304" height="236">
+        </div>
+    </div>
+    <div class = "row text-center">
+        <div class = "col-sm-12">
+            <h1> Welcome {{inf.name}}</h1>
+        </div>
+    </div>
+    <div class = "row text-center">
+        <div class = "col-sm-12">
+            <a href = "{{url_for('editTutor' , tutor_id = inf.id)}}"><button name="edit" class="btn btn-success">Edit Profile</button></a>
+            <a href = "{{url_for('deleteTutor' , tutor_id = inf.id)}}"><button name="delete" class="btn btn-success">Delete Profile</button></a>
+            <a href = "{{url_for('newTutorStudent' , tutor_id = inf.id)}}"><button name="new" class="btn btn-success">Add Student</button></a>
+        </div>
+    </div>
+    <div class = "row text-center">
+        <div class = "col-sm-12">
+            <h1>Student's List</h1>
+        </div>
+    </div>
+    {% for i in item %}
+    <div class = "row text-center">
+        <div class = "col-sm-12">
+            <h2> ID({{ i.id }}) {{i.name}}</h2>
+        </div>
+    </div>
+    <div class = "row text-center">
+        <div class = "col-sm-12">
+            <a href = "{{url_for('editTutorStudent' , tutor_id = inf.id , student_id = i.id )}}"><button name="edit" class="btn btn-primary">Edit Profile</button></a>
+            <a href = "{{url_for('deleteTutorStudent' , tutor_id = inf.id , student_id = i.id)}}"><button name="delete" class="btn btn-primary">Delete Profile</button></a>
+        </div>
+    </div>
+    {% endfor %}
+{% endblock %}

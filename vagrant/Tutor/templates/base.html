@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tutor's Point</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type="text/css">
+        body {
+            font: 400 15px Lato, sans-serif;
+            line-height: 1.8;
+            color: #818181;
+        }
+        .navbar {
+      margin-bottom: 0;
+      background-color: #f4511e;
+      z-index: 9999;
+      border: 0;
+      font-size: 12px !important;
+      line-height: 1.42857143 !important;
+      letter-spacing: 4px;
+      border-radius: 0;
+      font-family: Montserrat, sans-serif;
+  }
+  .navbar li a, .navbar .navbar-brand {
+      color: #fff !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active {
+      color: #f4511e !important;
+      background-color: #fff !important;
+  }
+  .navbar-default{
+      border-color: transparent;
+      color: #fff !important;
+  }
+  .container-fluid {
+      padding: 60px 50px;
+  }
+.bg-grey {
+      background-color: #f6f6f6;
+  }
+  .xx{
+    font-size: 150%;
+  }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+         <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Tutor's Point</a>
+            </div>
+            <div id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">ABOUT DEVELOPER</a></li>
+                    <li><a href="#">LOGIN</a></li>
+                    <li><a href="#">LOGOUT</a></li>
+                    <li><a href="/tutor/new">New Tutor</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class = "container-fluid bg-grey">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <footer class="container-fluid text-center">
+        <p>Made By <a href="http://www.github.com/rikkz">Rohit Mangla</a></p>
+    </footer>
+</body>
+</html>
