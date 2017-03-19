@@ -1,8 +1,19 @@
 {% extends 'base.html' %}
 {% block content %}
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                {{message}}
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
     <div class = "row text-center">
         <div class = "col-sm-12">
-            <img src="https://cdn0.iconfinder.com/data/icons/business-collection-2/128/user_man-512.png" class="img-circle" alt="Cinque Terre" width="304" height="236">
+            {% if log['user_id'] == inf.user_id %}
+                <img src="{{log['picture']}}" class="img-circle" alt="Cinque Terre" width="304" height="236">
+            {% else %}
+                <img src="https://cdn0.iconfinder.com/data/icons/business-collection-2/128/user_man-512.png" class="img-circle" alt="Cinque Terre" width="304" height="236">
+            {% endif %}
         </div>
     </div>
     <div class = "row text-center">

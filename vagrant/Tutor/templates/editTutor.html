@@ -1,5 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
+{% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                {{message}}
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
     <div class = "row text-center">
         <div class = "col-sm-12">
             <img src="https://cdn3.iconfinder.com/data/icons/simplius-pack/512/pencil_and_paper-512.png" class="img-rounded" alt="TT" width="304" height="236">
